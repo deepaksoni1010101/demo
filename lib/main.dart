@@ -67,7 +67,10 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(widget.title),
-        backgroundColor: const Color.fromARGB(146, 45, 241, 172),
+        backgroundColor: Color.fromARGB(146, 34, 244, 65),
+        actions: [
+          IconButton(onPressed: () {}, icon: const Icon(Icons.settings))
+        ],
       ),
       body: Center(
         child: Column(
@@ -84,15 +87,28 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: EdgeInsets.zero,
           children: const [
             DrawerHeader(
-                decoration: BoxDecoration(color: Colors.green),
-                child: Text('Header'))
+              decoration: BoxDecoration(color: Colors.green),
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Icon(
+                  Icons.account_circle,
+                  size: 140,
+                  color: Color.fromARGB(255, 78, 56, 49),
+                ),
+              ),
+            ),
             ListTile(
               title: Text('Payments'),
-              onTap: () {
-                
-              },
-
-            )    
+            ),
+            ListTile(
+              title: Text('Visitors'),
+            ),
+            ListTile(
+              title: Text('Credits'),
+            ),
+            ListTile(
+              title: Text('Edit'),
+            ),
           ],
         ),
       ),
